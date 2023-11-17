@@ -1,0 +1,2 @@
+gcc -c bind_terminal.c -std=c99 -Ilibs/webview -o build/bind_terminal.o
+g++ build/bind_terminal.o build/webview.o $(pkg-config --libs gtk+-3.0 webkit2gtk-4.1) -o bind_terminal

@@ -1,0 +1,2 @@
+gcc -c bind.c -std=c99 -Ilibs/webview -o build/bind.o
+g++ build/bind.o build/webview.o $(pkg-config --libs gtk+-3.0 webkit2gtk-4.1) -o bind

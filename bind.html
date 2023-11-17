@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #textarea {
+        width: 500px;
+        height: 500px;
+      }
+    </style>
+    <script>
+      function write(text) {
+        document.getElementById("textarea").value += `${text}\n`;
+      }
+
+
+      function onKeyDown(event) {  
+          event = event || document.event;
+
+          var isEscape = event.key === "Escape" ||
+            event.key === "Esc" ||
+            event.keyCode === 27;
+
+          if (isEscape) {
+            document.removeEventListener("onclick", onKeyDown);
+            exit_program();
+          }
+      };
+
+      document.addEventListener("keydown", onKeyDown);
+    </script>
+  </head>
+  <body>
+    <h1>Terminal</h1>
+
+    <button onclick="call_c();">Call C</button>
+
+    <br />
+
+    <textarea id="textarea"></textarea>
+  </body>
+</html>
